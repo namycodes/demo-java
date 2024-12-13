@@ -1,10 +1,9 @@
-# Start with the base image
-FROM openjdk:17-jdk-alpine
+FROM alpine
 
-# Set the working directory inside the container
-WORKDIR /demo-ci-cd
+ARG JAR_FILE=target/*.jar
 
-# Copy the JAR file from the build context into the container
-COPY target/demo-ci-cd-1.0-SNAPSHOT.jar app.jar
-# Command to run the JAR file
-ENTRYPOINT ["java", "-jar", "app.jar"]
+WORKDIR /opt/app
+
+COPY ${JAR_FILE} demo.jar
+
+ENTRYPOINT ["java", "-jar", "demo.jar"]
