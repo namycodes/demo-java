@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-alpine
 
-ARG JAR_FILE=./target/*.jar
+ARG JAR_FILE=target/demo-ci-cd-1.0-SNAPSHOT.jar
 
 COPY ${JAR_FILE} demo.jar
 
