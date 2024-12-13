@@ -1,6 +1,6 @@
 FROM alpine
 
-ARG JAR_FILE=/home/runner/work/demo-java/demo-java/target/*.jar
+ARG JAR_FILE=target/*.jar
 
 COPY ${JAR_FILE} demo.jar
 
