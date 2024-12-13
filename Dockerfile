@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-alpine
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /demo-ci-cd
 
 # Copy the JAR file from the build context into the container
 COPY target/demo-ci-cd-1.0-SNAPSHOT.jar app.jar
