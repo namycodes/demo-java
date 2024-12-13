@@ -7,13 +7,10 @@ WORKDIR /demo-ci-cd
 COPY . .
 
 # Build argument for the JAR file
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=target/demo-ci-cd-1.0-SNAPSHOT.jar
 
 # Copy the JAR file to a fixed location in the container
 RUN cp ${JAR_FILE} demo.jar
-
-# Expose the application port
-EXPOSE 8080
 
 # Command to run the JAR file
 ENTRYPOINT ["java", "-jar", "demo.jar"]
